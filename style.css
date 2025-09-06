@@ -1,0 +1,21 @@
+/* Simple neutral styles */
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.4 system-ui,Segoe UI,Arial;background:#0b0c0f;color:#eaeef2}
+.wrap{max-width:1000px;margin:20px auto;padding:0 16px}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#11131a;border-bottom:1px solid #1e2230}
+.bar h1{margin:0;font-size:18px}
+.pill{display:inline-block;background:#1f2937;color:#eaeef2;padding:6px 10px;border-radius:999px;text-decoration:none}
+.card{background:#11131a;border:1px solid #1e2230;border-radius:14px;padding:14px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(180px,1fr));gap:10px}
+.grid label{display:flex;flex-direction:column;font-size:12px;gap:6px}
+input,select{background:#0f1117;color:#eaeef2;border:1px solid #2a2f45;border-radius:10px;padding:10px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+button{border:none;border-radius:10px;padding:10px 14px;cursor:pointer;background:#2a2f45;color:#eaeef2}
+button.primary{background:#22c55e;color:#0b0c0f}
+button.accent{background:#0ea5e9;color:#0b0c0f}
+button.ghost{background:#2a2f45}
+.preview{white-space:pre-wrap;background:#0f1117;border:1px solid #1e2230;border-radius:10px;padding:12px;min-height:80px}
+.muted{opacity:.8}
+.foot{padding:16px;text-align:center;color:#9aa0a6}
+code{background:#0f1117;border:1px solid #1e2230;border-radius:6px;padding:2px 6px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(180px,1fr));}}

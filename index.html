@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>A++ Signal Webtool – Auto-Trade (Demo)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="bar">
+    <h1>A++ Signal Webtool</h1>
+    <div class="right">
+      <a class="pill" href="README.html" target="_blank">Anleitung</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Signal-Daten</h2>
+      <div class="grid">
+        <label>Datum
+          <input id="date" type="date">
+        </label>
+        <label>Market
+          <select id="market">
+            <optgroup label="Crypto (USD-M Perpetual)">
+              <option>BTC</option>
+              <option>ETH</option>
+              <option>SOL</option>
+              <option>XRP</option>
+              <option>DOGE</option>
+              <option>SHIB</option>
+              <option>ADA</option>
+              <option>BNB</option>
+            </optgroup>
+            <optgroup label="Futures (nur manuell, nicht auto-tradbar mit OKX)">
+              <option>ES</option>
+              <option>MES</option>
+              <option>NQ</option>
+              <option>MNQ</option>
+            </optgroup>
+          </select>
+        </label>
+        <label>Side
+          <select id="side">
+            <option value="long">long</option>
+            <option value="short">short</option>
+          </select>
+        </label>
+        <label>Order-Typ
+          <select id="orderType">
+            <option value="Limit">Limit</option>
+            <option value="Market">Market</option>
+          </select>
+        </label>
+        <label>Entry
+          <input id="entry" type="number" step="0.01" placeholder="z. B. 60000">
+        </label>
+        <label>SL
+          <input id="sl" type="number" step="0.01">
+        </label>
+        <label>TP1
+          <input id="tp1" type="number" step="0.01">
+        </label>
+        <label>TP2
+          <input id="tp2" type="number" step="0.01">
+        </label>
+        <label>TP3
+          <input id="tp3" type="number" step="0.01">
+        </label>
+        <label>CRV
+          <input id="crv" type="number" step="0.01">
+        </label>
+        <label>TP1-Prob (0..1)
+          <input id="tp1Prob" type="number" step="0.01" min="0" max="1">
+        </label>
+        <label>Contracts
+          <input id="contracts" type="number" step="1" min="1" value="1">
+        </label>
+        <label>Notiz
+          <input id="note" type="text" placeholder="optional">
+        </label>
+      </div>
+
+      <div class="row">
+        <button id="btnBuild" class="primary">Signal erstellen</button>
+        <button id="btnCopy" class="ghost">Als Text kopieren</button>
+        <button id="btnAutoTrade" class="accent">Auto-Trade (Demo)</button>
+      </div>
+      <p id="msg" class="muted"></p>
+      <pre id="preview" class="preview" aria-live="polite"></pre>
+    </section>
+
+    <section class="card">
+      <h2>API-Status</h2>
+      <div class="row">
+        <label>Vercel-API Basis-URL
+          <input id="apiBase" type="text" placeholder="/api">
+        </label>
+        <button id="btnPing">Ping</button>
+      </div>
+      <p class="muted">Hinweis: Bei Vercel reicht <code>/api</code> als Basis. Lokal ggf. <code>http://localhost:3000/api</code>.</p>
+      <pre id="pingOut" class="preview"></pre>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <small>Demo: Orders werden im OKX Simulationsmodus gesendet (kein Echtgeld).</small>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
